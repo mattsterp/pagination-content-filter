@@ -2,14 +2,15 @@
 Treehouse Techdegree:
 FSJS project 2 - List Filter and Pagination
 ******************************************/
-
-// Add variables that store DOM elements you will need to reference and/or manipulate
-const allItems = $('.student-list .student-item').length;
-const itemsPerPage = 10;
-const pageCount = Math.ceil(allItems / itemsPerPage);
-// Create a function to hide all of the items in the list excpet for the ten you want to show
-// Tip: Keep in mind that with a list of 54 studetns, the last page will only display four
 $(document).ready(function() {
+	// Add variables that store DOM elements you will need to reference and/or manipulate
+	const allItems = $('.student-item').length;
+	const itemsPerPage = 10;
+	const pageCount = Math.ceil(allItems / itemsPerPage);
+	const paginationTemplate = $();
+	// Create a function to hide all of the items in the list except for the ten you want to show
+	// Tip: Keep in mind that with a list of 54 studetns, the last page will only display four
+
 	$('.student-list .student-item:gt(' + (itemsPerPage - 1) + ')').hide();
 
 	for (let i = 0; i <= pageCount; i += 1) {}
@@ -18,6 +19,5 @@ $(document).ready(function() {
 
 	// Add functionality to the pagination buttons so that they show and hide the correct items
 	// Tip: If you created a function above to show/hide list items, it could be helpful here
-
 	alert(pageCount);
 });
